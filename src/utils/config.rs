@@ -5,6 +5,8 @@ use std::fs;
 pub struct Config {
     pub feishu_webhook: String,
     pub wechat_webhook: String,
+    pub host_ip: String,
+    pub port: String,
 }
 
 impl Config {

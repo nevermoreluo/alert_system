@@ -1,0 +1,6 @@
+{
+    "host_ip": "127.0.0.1",
+    "port": "8080",
+    "feishu_webhook": "https://open.feishu.cn/open-apis/bot/v2/hook/xxx-xxx",
+    "wechat_webhook": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxx-xxx"
+}

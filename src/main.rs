@@ -13,14 +13,16 @@ async fn main() -> std::io::Result<()> {
     env_logger::init();
 
     let config = utils::config::Config::from_env().unwrap();
-
+    // 提前提取 host_ip 和 port
+    let host_ip: String = config.host_ip.clone();
+    let port: String = config.port.clone();
     // Start the HTTP server
     HttpServer::new(move || {
         App::new()
             .app_data(web::Data::new(config.clone()))
             .configure(routes::api_routes::api_routes)
     })
-    .bind("127.0.0.1:8080")?
+    .bind(format!("{}:{}", host_ip, port))?
     .run()
     .await
 }
